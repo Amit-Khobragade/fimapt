@@ -1,0 +1,21 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+#map {
+	height: 100vh;
+	width: 100%;
+}
+
+#routines {
+	background: hsla(0, 2%, 47%, 0.75);
+	border-radius: 10px;
+	height: 95vh;
+	left: 0;
+	position: absolute;
+	top: 50%;
+	transform: translate(10%, -50%);
+	width: 400px;
+	z-index: 5000;
+}
