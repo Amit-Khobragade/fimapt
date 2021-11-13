@@ -1,0 +1,6 @@
+{
+    "arrowParens": "avoid",
+    "singleQuote": true,
+    "useTabs": true,
+    "tabWidth": 2
+}
