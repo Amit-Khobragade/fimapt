@@ -26,6 +26,59 @@
 	</head>
 	<body>
 		<main id="map"></main>
-		<section id="routines"></section>
+		<article id="routines">
+			<h1 class="logo">FiMapT</h1>
+			<section class="details">
+				<form id="ex" action="">
+					<label for="type">type</label>
+					<select
+						name="type"
+						id="ex-type"
+						onchange="this.dataset.opt = this.value"
+					>
+						<option value="cycling">cycling</option>
+						<option value="walking">walking</option>
+					</select>
+					<label for="dist">distance</label>
+					<input type="text" name="dist" id="dist" placeholder="km" />
+					<label for="time">Time</label>
+					<input type="text" name="time" id="time" placeholder="time" />
+					<label for="elev-gain">elev gain</label>
+					<input
+						type="text"
+						name="elev-gain"
+						id="elev-gain"
+						placeholder="meters"
+					/>
+					<label for="cadence">cadence</label>
+					<input
+						type="text"
+						name="cadence"
+						id="cadence"
+						placeholder="step/min"
+					/>
+					<label for="date">date</label>
+					<input type="date" name="date" id="date" />
+				</form>
+				<!-- * task sample -->
+				<div class="task cycling">
+					<h2 class="verbose">
+						<span class="type"></span>
+						on
+						<span class="date"></span>
+					</h2>
+					<div class="details"></div>
+				</div>
+
+				<div class="task walking">
+					<h2 class="verbose">
+						<span class="type"></span>
+						on
+						<span class="date"></span>
+					</h2>
+					<div class="details"></div>
+				</div>
+			</section>
+		</article>
 	</body>
 </html>
