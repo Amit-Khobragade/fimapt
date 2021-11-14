@@ -27,56 +27,75 @@
 	<body>
 		<main id="map"></main>
 		<article id="routines">
-			<h1 class="logo">FiMapT</h1>
-			<section class="details">
-				<form id="ex" action="">
+			<h1 class="header">FiMapT</h1>
+			<section class="workouts">
+				<form id="ex" action="" data-type="cycling">
 					<label for="type">type</label>
 					<select
 						name="type"
 						id="ex-type"
-						onchange="this.dataset.opt = this.value"
+						onchange="this.parentElement.dataset.type = this.value"
 					>
 						<option value="cycling">cycling</option>
 						<option value="walking">walking</option>
 					</select>
 					<label for="dist">distance</label>
-					<input type="text" name="dist" id="dist" placeholder="km" />
+					<input type="text" name="dist" id="dist" placeholder="km" required />
 					<label for="time">Time</label>
-					<input type="text" name="time" id="time" placeholder="time" />
+					<input
+						type="text"
+						name="time"
+						id="time"
+						placeholder="mins"
+						required
+					/>
 					<label for="elev-gain">elev gain</label>
 					<input
 						type="text"
 						name="elev-gain"
 						id="elev-gain"
 						placeholder="meters"
+						required
 					/>
-					<label for="cadence">cadence</label>
+					<label class="invisible" for="cadence">cadence</label>
 					<input
 						type="text"
 						name="cadence"
+						class="invisible"
 						id="cadence"
 						placeholder="step/min"
 					/>
 					<label for="date">date</label>
-					<input type="date" name="date" id="date" />
+					<input type="date" name="date" id="date" required />
+					<button type="submit" id="submit-btn">&rArr;</button>
 				</form>
 				<!-- * task sample -->
-				<div class="task cycling">
+				<div class="task" data-type="cycling">
 					<h2 class="verbose">
-						<span class="type"></span>
+						<span class="type">cycling</span>
 						on
 						<span class="date"></span>
 					</h2>
-					<div class="details"></div>
+					<div class="details">
+						<span class="dist">🚴20 KM</span>
+						<span class="time">⌚120 Min</span>
+						<span class="spec">🗻 4 Meters</span>
+						<span class="speed">⚡0.22 m/s</span>
+					</div>
 				</div>
 
-				<div class="task walking">
+				<div class="task" data-type="walking">
 					<h2 class="verbose">
-						<span class="type"></span>
+						<span class="type">walking</span>
 						on
 						<span class="date"></span>
 					</h2>
-					<div class="details"></div>
+					<div class="details">
+						<span class="dist">🏃‍♂️20 KM</span>
+						<span class="time">⌚120 Min</span>
+						<span class="spec">👟 4 Meters</span>
+						<span class="speed">⚡0.22 m/s</span>
+					</div>
 				</div>
 			</section>
 		</article>

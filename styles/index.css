@@ -1,6 +1,42 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: monospace;
+}
+
+input,
+select,
+button {
+  background: rgba(89, 84, 84, 0.5);
+  border: 2px solid black;
+  border-radius: 10px;
+  color: white;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+input[type=date] {
+  grid-column-start: 2;
+  grid-column-end: -2;
+}
+
+input::placeholder {
+  color: white;
+  text-transform: capitalize;
+}
+
+label {
+  color: white;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+option {
+  text-transform: capitalize;
+}
+
+.invisible {
+  display: none;
 }
 
 #map {
@@ -16,8 +52,90 @@
   position: absolute;
   top: 50%;
   transform: translate(10%, -50%);
-  width: 400px;
+  width: 450px;
   z-index: 5000;
+}
+
+#routines {
+  padding: 1rem;
+  text-align: center;
+}
+#routines .header {
+  background: radial-gradient(circle at center, #1a1919, #413e3e, #1a1919);
+  border-radius: 10px;
+  padding: 0.5rem;
+  color: white;
+}
+
+#ex {
+  align-items: center;
+  background: radial-gradient(circle at center, #1a1919, #413e3e, #1a1919);
+  border-radius: 10px;
+  display: grid;
+  gap: 0.75rem 0.75rem;
+  grid-template-columns: 2fr 3fr 2fr 3fr;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  transition: all 500ms linear;
+}
+#ex[data-type=cycling] {
+  border-left: solid 5px blue;
+}
+#ex[data-type=walking] {
+  border-left: solid 5px red;
+}
+
+.workouts {
+  background: rgba(32, 29, 29, 0.521);
+  border-radius: 10px;
+  height: 85%;
+  padding: 0.5rem;
+  margin-top: 10px;
+  overflow-y: scroll;
+}
+
+.task {
+  background: radial-gradient(circle at center, #1a1919, #413e3e, #1a1919);
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  text-align: left;
+  text-transform: capitalize;
+  transition: all 500ms linear;
+}
+.task[data-type=cycling] {
+  border-left: solid 5px blue;
+}
+.task[data-type=walking] {
+  border-left: solid 5px red;
+}
+.task:hover, .task:focus {
+  transform: scale(1.03);
+}
+
+.verbose {
+  position: relative;
+}
+.verbose::after {
+  background: white;
+  border-radius: 200%;
+  bottom: -6px;
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 3px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /*# sourceMappingURL=index.css.map */
