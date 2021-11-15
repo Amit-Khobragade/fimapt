@@ -95,6 +95,10 @@ option {
 	&[data-type='walking'] {
 		border-left: solid 5px red;
 	}
+
+	&.invisible {
+		display: none;
+	}
 }
 
 .workouts {

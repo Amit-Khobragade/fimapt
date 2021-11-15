@@ -84,6 +84,9 @@ option {
 #ex[data-type=walking] {
   border-left: solid 5px red;
 }
+#ex.invisible {
+  display: none;
+}
 
 .workouts {
   background: rgba(32, 29, 29, 0.521);

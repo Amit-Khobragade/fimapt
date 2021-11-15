@@ -30,13 +30,9 @@
 		<article id="routines">
 			<h1 class="header">FiMapT</h1>
 			<section class="workouts">
-				<form id="ex" action="" data-type="cycling">
+				<form id="ex" action="" data-type="cycling" class="invisible">
 					<label for="type">type</label>
-					<select
-						name="type"
-						id="ex-type"
-						onchange="this.parentElement.dataset.type = this.value"
-					>
+					<select name="type" id="ex-type">
 						<option value="cycling">cycling</option>
 						<option value="walking">walking</option>
 					</select>
@@ -50,10 +46,10 @@
 						placeholder="mins"
 						required
 					/>
-					<label for="elev-gain">elev gain</label>
+					<label for="elevGain">elev gain</label>
 					<input
 						type="text"
-						name="elev-gain"
+						name="elevGain"
 						id="elev-gain"
 						placeholder="meters"
 						required
