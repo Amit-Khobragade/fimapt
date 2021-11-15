@@ -3,7 +3,7 @@ function Activity(date, distance, duration, marker, type) {
 	this.distance = distance;
 	this.duration = duration;
 	this.type = type;
-	this.marker = marker;
+	this.latlng = marker.getLatLng();
 
 	this.speed = (distance * 1000) / (duration * 60);
 	this.speed = Math.round(this.speed * 100) / 100;
@@ -29,14 +29,20 @@ function Activity(date, distance, duration, marker, type) {
 	this.prompt.querySelector('.dist').innerText = `${distance} KM`;
 	this.prompt.querySelector('.time').innerText = `⌚${duration} min`;
 	this.prompt.querySelector('.speed').innerText = `⚡${this.speed} m/s`;
+
+	marker.bindTooltip(`${this.type} On ${this.date}`);
 }
 
 Activity.prototype.getPrompt = function () {
 	return this.prompt;
 };
+Activity.prototype.getLatLng = function () {
+	return this.latlng;
+};
 
 function Walking(date, distance, duration, marker, spm) {
 	Activity.call(this, date, distance, duration, marker, 'walking');
+	this.spm = spm;
 	this.prompt.querySelector('.spec').innerText = `👟 ${spm} spm`;
 	this.prompt.querySelector('.dist').innerText =
 		'🏃' + this.prompt.querySelector('.dist').innerText;
@@ -47,6 +53,7 @@ Walking.prototype.constructor = Walking;
 
 function Cycling(date, distance, duration, marker, elev) {
 	Activity.call(this, date, distance, duration, marker, 'cycling');
+	this.elev = elev;
 	this.prompt.querySelector('.spec').innerText = `🗻 ${elev} meters`;
 	this.prompt.querySelector('.dist').innerText =
 		'🚴' + this.prompt.querySelector('.dist').innerText;
